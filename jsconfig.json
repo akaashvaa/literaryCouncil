@@ -1,7 +1,12 @@
 {
   "compilerOptions": {
     "paths": {
-      "@council/*": ["./src/*"]
+      "@council/*": [
+        "./src/*"
+      ],
+      "@assets/*": [
+        "./public/*"
+      ]
     }
   }
 }
