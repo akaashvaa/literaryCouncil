@@ -1,11 +1,9 @@
-'use client'
+import { branchRoute } from '@council/constants'
+import SecBranchHome from '@council/components/helper/SecHomePage'
 
-const Sahityotsav = () => {
-  return (
-    <div>
-      <h1>Event Page</h1>
-    </div>
-  )
+const Abhyuday = () => {
+  const { img, content } = branchRoute.debateClub
+  return <SecBranchHome content={content} img={img} />
 }
 
-export default Sahityotsav
+export default Abhyuday

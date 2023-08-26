@@ -5,31 +5,26 @@ import Image from 'next/image'
 
 import { motion } from 'framer-motion'
 
-import { navLinks } from "@council/constants"
+import { navLinks } from '@council/constants'
 import { navVarient } from '@council/utils/motion.js'
-
 
 import logo from '@assets/logo.png'
 import lit from '@assets/lit2.png'
 import close from '@assets/close2.png'
-import menu from "@assets/menu2.png"
+import menu from '@assets/menu2.png'
 
 const Navbar = () => {
   const [active, setActive] = useState('')
   const [toggle, setToggle] = useState(false)
 
   return (
-    <nav
-      className=" md:px-32 px-5 py-10 w-full h-14 flex  justify-between top-0 fixed items-center z-30  text-white bg-bl-primary
-     transition-all duration-500 ease-in-out "
+    <motion.nav
+      className=" md:px-32 px-5 py-3 w-full flex  justify-between top-0 fixed items-center z-30  text-white bg-bl-primary
+     transition-all duration-500 ease-in-out"
     >
       <Link
         href="/"
-        onClick={() => {
-          setActive('')
-          window.scrollTo(0, 0)
-        }}
-        className="flex  items-center md:justify-start  "
+        className="flex xs:flex-row justify-center flex-col gap-1  items-center md:justify-start  "
       >
         <motion.div
           variants={navVarient()}
@@ -40,10 +35,10 @@ const Navbar = () => {
           <Image
             src={logo}
             alt="literaryLogo"
-            width={270}
+            width={250}
             priority={true}
-            height={290}
-            className="w-8  h-10"
+            height={270}
+            className="w-6  h-8 xs:flex hidden"
           />
         </motion.div>
         <Image
@@ -76,15 +71,17 @@ const Navbar = () => {
           }}
         />
         <div
-          className={`${!toggle ? 'hidden' : 'flex'
-            } p-6 black-gradient absolute top-16  mx-4 my-4 bg-primary rounded-xl border-2 border-bl-secondary backdrop-blur-lg  bg-bl-primary `}
+          className={`${
+            !toggle ? 'hidden' : 'flex'
+          } p-8 absolute top-16  m-4 rounded-xl border-2 border-bl-secondary  bg-bl-primary `}
         >
           <ul className="list-none flex flex-1 flex-col gap-4 items-start justify-end ">
             {navLinks.map((nav) => (
               <li
                 key={nav.id}
-                className={`${active === nav.title ? 'text-white' : 'text-bl-primary'
-                  }font-poppins font-medium text-[17px] cursor-pointer`}
+                className={`${
+                  active === nav.title ? 'text-white' : 'text-bl-primary'
+                }font-poppins font-medium text-[1em] cursor-pointer`}
                 onClick={() => {
                   setToggle(!toggle)
                   setActive(nav.title)
@@ -98,7 +95,7 @@ const Navbar = () => {
           </ul>
         </div>
       </div>
-    </nav>
+    </motion.nav>
   )
 }
 

@@ -1,11 +1,11 @@
-import dash from "@assets/knitLogo.png"
-import image from "@assets/image.png"
-import book from "@assets/book.png"
-import poetry from "@assets/poetry.png"
-import debate from "@assets/debate.jpeg"
-import facebook from "@assets/facebook.png"
-import instagram from "@assets/instagram.png"
-import gmail from "@assets/gmail.png"
+import dash from '@assets/knitLogo.png'
+import profile from '@assets/profile.png'
+import book from '@assets/book.png'
+import poetry from '@assets/poetry.png'
+import debate from '@assets/debate.jpeg'
+import facebook from '@assets/facebook.png'
+import instagram from '@assets/instagram.png'
+import gmail from '@assets/gmail.png'
 
 export const navLinks = [
   {
@@ -59,6 +59,10 @@ export const branchRoute = {
 
 export const events = [
   {
+    id: 'LitFest',
+    title: 'Lit Fest',
+  },
+  {
     id: 'DebateSuperLeague',
     title: 'Debate Super League',
   },
@@ -71,10 +75,7 @@ export const events = [
     id: 'KavySarita',
     title: 'Kavy Sarita',
   },
-  {
-    id: 'LitFest',
-    title: 'Lit Fest',
-  },
+
   {
     id: 'Abhyudav',
     title: 'Abhyudav',
@@ -106,6 +107,8 @@ export const messages = [
   {
     id: 'Director',
     name: 'KS Verma ',
+    img: profile,
+
     Position: 'Director',
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim aliquam velit adipisci dicta. Similique repudiandae reprehenderit aliquam explicabo iure, ipsam repellat tenetur accusantium nisi, eum dignissimos quidem, perferendis nihil vitae.Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim aliquam velit adipisci dicta. Similique repudiandae reprehenderit aliquam explicabo iure, ipsam repellat tenetur accusantium nisi, eum dignissimos quidem, perferendis nihil vitae.Lorem ipsum dolor sit amet conse',
@@ -114,6 +117,8 @@ export const messages = [
     id: 'Dean',
     name: 'Ajay Shekhar Pandey ',
     Position: 'Dean',
+    img: profile,
+
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim aliquam velit adipisci dicta. Similique repudiandae reprehenderit aliquam explicabo iure, ipsam repellat tenetur accusantium nisi, eum dignissimos quidem, perferendis nihil vitae.',
   },
@@ -121,6 +126,8 @@ export const messages = [
     id: 'Convenor',
     name: 'Ajay Shekhar Pandey ',
     Position: 'Convenor',
+    img: profile,
+
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim aliquam velit adipisci dicta. Similique repudiandae reprehenderit aliquam explicabo iure, ipsam repellat tenetur accusantium nisi, eum dignissimos quidem, perferendis nihil vitae.',
   },
@@ -128,35 +135,9 @@ export const messages = [
     id: 'Alumni1',
     name: 'Anurag Srivastava ',
     Position: 'TCS',
+    img: profile,
     description:
       'Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim aliquam velit adipisci dicta. Similique repudiandae reprehenderit aliquam explicabo iure, ipsam repellat tenetur accusantium nisi, eum dignissimos quidem, perferendis nihil vitae.',
-  },
-]
-
-export const members = [
-  {
-    id: 'name1',
-    name: 'Name1 ',
-    img: image,
-    Position: 'secreatery',
-  },
-  {
-    id: 'name2',
-    name: 'Name2 ',
-    img: image,
-    Position: 'secreatery',
-  },
-  {
-    id: 'name3',
-    name: 'Name3 ',
-    img: image,
-    Position: 'secreatery',
-  },
-  {
-    id: 'name4',
-    name: 'Name4 ',
-    img: image,
-    Position: 'secreatery',
   },
 ]
 
@@ -170,7 +151,7 @@ export const achievementData = [
     points: [
       {
         winnerName: 'Winner Name',
-        batch: 'batch',
+        batch: '2019',
         positions: [
           {
             eventName: 'event name',
@@ -208,7 +189,7 @@ export const achievementData = [
     points: [
       {
         winnerName: 'Winner Name',
-        batch: 'batch',
+        batch: '2020',
         positions: [
           {
             eventName: 'event name',
@@ -276,6 +257,92 @@ export const achievementData = [
     ],
   },
 ]
+
+export const membersType = [
+  {
+    id: 'head',
+    title: 'Head',
+  },
+  {
+    id: 'sub-head',
+    title: 'Sub Head',
+  },
+  {
+    id: 'executive',
+    title: 'Executive',
+  },
+]
+
+export const members = {
+  head: [
+    {
+      id: 'name1',
+      name: 'Name1 ',
+      img: profile,
+      Position: 'secreatery',
+    },
+    {
+      id: 'name2',
+      name: 'Name2 ',
+      img: profile,
+      Position: 'secreatery',
+    },
+    {
+      id: 'name3',
+      name: 'Name3 ',
+      img: profile,
+      Position: 'secreatery',
+    },
+    {
+      id: 'name4',
+      name: 'Name4 ',
+      img: profile,
+      Position: 'secreatery',
+    },
+    {
+      id: 'name5',
+      name: 'Name5 ',
+      img: profile,
+      Position: 'Book Pool Head',
+    },
+    {
+      id: 'name6',
+      name: 'Name6 ',
+      img: profile,
+      Position: 'Debate club head',
+    },
+  ],
+
+  subHead: [
+    {
+      id: 'name3',
+      name: 'Name3 ',
+      img: profile,
+      Position: 'secreatery',
+    },
+    {
+      id: 'name4',
+      name: 'Name4 ',
+      img: profile,
+      Position: 'secreatery',
+    },
+  ],
+
+  executive: [
+    {
+      id: 'name3',
+      name: 'Name3 ',
+      img: profile,
+      Position: 'secreatery',
+    },
+    {
+      id: 'name4',
+      name: 'Name4 ',
+      img: profile,
+      Position: 'secreatery',
+    },
+  ],
+}
 
 export const contacts = [
   {

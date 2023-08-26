@@ -1,11 +1,18 @@
-'use client'
+import React from 'react'
+import { members } from '@council/constants'
+import MemberCard from '@council/components/helper/memberCard'
 
-import { branchRoute } from '../../constants'
-
-export default function BookPool() {
-  const { img, content } = branchRoute.bookPool
-
+const Head = () => {
+  const { head } = members
   return (
-    <section className="mt-32 h-96 flex flex-col justify-between items-center"></section>
+    <>
+      {head.map((member, i) => (
+        <div key={i}>
+          <MemberCard member={member} i={i} />
+        </div>
+      ))}
+    </>
   )
 }
+
+export default Head

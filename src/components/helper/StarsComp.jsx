@@ -18,9 +18,9 @@ const StarsComp = (props) => {
     // console.log(currentSeason)
   }, [currentSeason])
 
-  if (currentSeason === 'maple-leaf.png') {
-    AmountOfItem = 500
-    sizeOfItem = 0.02
+  if (currentSeason == 'maple-leaf.png') {
+    AmountOfItem = 100
+    sizeOfItem = 0.01
   }
 
   const sphere = new Float32Array(AmountOfItem * 3)

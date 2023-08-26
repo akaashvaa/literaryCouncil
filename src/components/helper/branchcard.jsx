@@ -14,20 +14,18 @@ const BranchCard = ({ branch, index, routePoint }) => {
         whileInView="show"
         viewport={{ once: true }}
         key={branch.id}
-        className=" h-80 w-80 flex flex-col  items-center justify-center"
+        onClick={() => router.push(routePoint)}
+        className=" h-80 w-80 flex flex-col  items-center justify-center cursor-pointer"
       >
-        <div onClick={() => router.push(routePoint)} className='p-2 hover:cursor-pointer'>
-          <Image
-            className=" rounded-full h-auto "
-            src={branch.image}
-            alt="photo"
-            width={300}
-          />
-          <p className=" absolute text-center bottom-0 font-semibold ">
-            {branch.title}
-          </p>
-
-        </div>
+        <Image
+          className=" rounded-full h-auto "
+          src={branch.image}
+          alt="photo"
+          width={300}
+        />
+        <p className=" absolute flex text-center bottom-0  font-light self-center">
+          {branch.title}
+        </p>
       </motion.div>
     </>
   )

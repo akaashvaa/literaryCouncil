@@ -1,10 +1,18 @@
-import { branchRoute } from '../../constants'
+import React from 'react'
+import { members } from '@council/constants'
+import MemberCard from '@council/components/helper/memberCard'
 
-const DebateClub = () => {
-  const { img, content } = branchRoute.debateClub
+const SubHead = () => {
+  const { subHead } = members
   return (
-    <section className="mt-32 h-96 flex flex-col justify-between items-center"></section>
+    <>
+      {subHead.map((member, i) => (
+        <div key={i}>
+          <MemberCard member={member} i={i} />
+        </div>
+      ))}
+    </>
   )
 }
 
-export default DebateClub
+export default SubHead

@@ -24,7 +24,7 @@ const About = () => {
         className="flex flex-col py-7 justify-center items-center  w-full  "
       >
         <div className="sm:w-[60%] rounded-lg">
-          <div className="flex flex-col justify-center items-center py-7   sm:px-10 px-3 gap-10   rounded-lg">
+          <div className="flex flex-col justify-center items-center py-7 text-[1.2em]  sm:px-10 px-3 gap-10   rounded-lg">
             <h1>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
               quam voluptatibus officia accusantium dolorem minus saepe,

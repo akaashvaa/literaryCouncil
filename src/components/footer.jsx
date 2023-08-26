@@ -14,7 +14,7 @@ export default function Contact() {
   return (
     <footer
       id="contact"
-      className="w-full bg-[#000000] flex justify-evenly items-center text-center p-10 text-white"
+      className="w-full bg-[#000000] flex sm:flex-row flex-col gap-5 justify-evenly items-center text-center p-10 text-white"
     >
       <div>
         <h1 className=" font-light">

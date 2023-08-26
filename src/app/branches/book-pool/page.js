@@ -1,7 +1,7 @@
 'use client'
 import React from 'react'
 import { branchRoute } from '@council/constants/'
-import BranchHome from '@council/components/branchHome'
+import SecBranchHome from '@council/components/helper/SecHomePage'
 
 export default function BookPool() {
   const { img, content } = branchRoute.bookPool
@@ -16,8 +16,8 @@ export default function BookPool() {
   }
 
   return (
-    <section className="mt-32 h-96 flex flex-col justify-between items-center">
-      <BranchHome img={img} content={content} />
+    <>
+      <SecBranchHome img={img} content={content} />
 
       <footer className="w-full absolute bottom-0 flex justify-center p-3 items-center bg-gray-200 text-center">
         If You want any of these book or the book pool related policies then u
@@ -29,6 +29,6 @@ export default function BookPool() {
           literaryCouncil@gmail.com
         </span>
       </footer>
-    </section>
+    </>
   )
 }

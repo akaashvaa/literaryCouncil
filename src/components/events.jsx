@@ -3,7 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { events } from '../constants'
-import { slideIn, textVariant } from '../utils/motion'
+import { fadeIn, textVariant } from '../utils/motion'
 import { styles } from '../app/styles'
 
 export default function Events() {
@@ -15,7 +15,7 @@ export default function Events() {
         whileInView="show"
         viewport={{ once: true }}
       >
-        <p className={styles.sectionSubText}>Our Orgainized Events</p>
+        <p className={styles.sectionSubText}>Our Top Orgainized Events</p>
         <h1 className={`${styles.sectionHeadText} pb-5`}>Our Events</h1>
       </motion.div>
 
@@ -24,7 +24,7 @@ export default function Events() {
           <Link key={event.id} href={`/events/${event.id}`}>
             <div className="relative hover:scale-105 transition-all ease-in-out ">
               <motion.div
-                variants={slideIn('left', 'tween', i * 0.3, 0.5)}
+                variants={fadeIn('right', 'tween', i * 0.3, 0.2)}
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}

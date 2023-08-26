@@ -1,8 +1,17 @@
+'use client'
 import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { slideIn } from '@council/utils/motion'
 
-const MemberCard = ({ member }) => {
+const MemberCard = ({ member, i }) => {
   return (
-    <div className=" shadow-md  bg-wh-primary  flex flex-col rounded-xl gap-3 items-center">
+    <motion.div
+      variants={slideIn('down', 'spring', i * 0.3, 1)}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+      className=" shadow-md  bg-wh-primary  flex flex-col rounded-xl gap-3 items-center"
+    >
       <Image
         src={member.img}
         width={200}
@@ -13,7 +22,7 @@ const MemberCard = ({ member }) => {
         <h1 className="">{member.name}</h1>
         <span>{member.Position}</span>
       </div>
-    </div>
+    </motion.div>
   )
 }
 export default MemberCard
