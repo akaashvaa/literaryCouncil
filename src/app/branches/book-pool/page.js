@@ -2,7 +2,6 @@
 import React from 'react'
 import { branchRoute } from '@council/constants/'
 import SecBranchHome from '@council/components/helper/SecHomePage'
-
 export default function BookPool() {
   const { img, content } = branchRoute.bookPool
 
@@ -22,12 +21,12 @@ export default function BookPool() {
       <footer className="w-full absolute bottom-0 flex justify-center p-3 items-center bg-gray-200 text-center">
         If You want any of these book or the book pool related policies then u
         can mail on this :
-        <span
+        <p
           className="p-3 mx-3 bg-wh-f3 rounded-md  cursor-pointer"
           onClick={handleMailtoClick}
         >
           literaryCouncil@gmail.com
-        </span>
+        </p>
       </footer>
     </>
   )

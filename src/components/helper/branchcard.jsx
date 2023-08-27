@@ -12,6 +12,7 @@ const BranchCard = ({ branch, index, routePoint }) => {
         variants={slideIn('left', 'tween', index * 0.3, 0.5)}
         initial="hidden"
         whileInView="show"
+        whileHover={{ scale: 1.02 }}
         viewport={{ once: true }}
         key={branch.id}
         onClick={() => router.push(routePoint)}

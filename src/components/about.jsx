@@ -3,6 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { textVariant, fadeIn } from '../utils/motion'
 import { styles } from '../app/styles'
+
 const About = () => {
   return (
     <section id="about" className="flex flex-col py-24 md:px-32 px-8 ">
@@ -12,12 +13,12 @@ const About = () => {
         whileInView="show"
         viewport={{ once: true }}
       >
-        <p className={styles.sectionSubText}>Who are we </p>
+        <p className={styles.sectionSubText}>Our Story </p>
         <h1 className={`${styles.sectionHeadText} pb-5`}>About Us</h1>
       </motion.div>
 
       <motion.div
-        variants={fadeIn('down', 'spring', 0, 1)}
+        variants={fadeIn('down', 'spring', 0.3, 0.5)}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}

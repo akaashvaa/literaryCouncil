@@ -32,11 +32,11 @@ export default function Members() {
           <MemberCard key={i} member={member} i={i} />
         ))}
       </div>
-      <div
-        onClick={() => router.push('/members/head')}
-        className="flex justify-end hover:drop-shadow-lg font-medium"
-      >
-        <button className="px-3 py-2 text-white bg-blue-600 rounded-md">
+      <div className="flex justify-end hover:drop-shadow-lg font-medium">
+        <button
+          className="px-3 py-2 text-white bg-bl-secondary shadow-md rounded-md"
+          onClick={() => router.push('/members/head')}
+        >
           View All Members &rarr;
         </button>
       </div>

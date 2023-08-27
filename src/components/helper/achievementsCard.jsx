@@ -27,7 +27,7 @@ function CardHelper({ point }) {
 export function AchievementCard({ achievement, index }) {
   return (
     <motion.div
-      variants={slideIn('down', 'spring', index * 0.3, 0.5)}
+      variants={slideIn('left', 'spring', index * 0.3, 0.5)}
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}

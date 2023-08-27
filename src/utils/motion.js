@@ -3,10 +3,12 @@ export const textVariant = (delay) => {
     hidden: {
       y: -100,
       opacity: 0,
+      rotateX: 0,
     },
     show: {
       y: 0,
       opacity: 1,
+      rotateX: 360,
       transition: {
         type: 'spring',
         duration: 1.15,
@@ -15,6 +17,22 @@ export const textVariant = (delay) => {
     },
   }
 }
+export const textVariant2 = () => {
+  return {
+    hidden: {
+      x: '-20%',
+    },
+    show: {
+      x: '100%',
+      transition: {
+        duration: 15,
+        ease: 'linear',
+        repeat: Infinity,
+      },
+    },
+  }
+}
+
 export const navVarient = () => {
   return {
     hidden: {
@@ -27,9 +45,7 @@ export const navVarient = () => {
       rotate: 360,
       transition: {
         type: 'spring',
-        stiffness: 260,
-        damping: 20,
-        bounce: 0.55,
+        delay: 0.8,
         ease: 'easeOut',
       },
     },
@@ -90,7 +106,7 @@ export const slideIn = (direction, type, delay, duration) => {
       opacity: 1,
 
       transition: {
-        ease: 'easeInOut',
+        ease: 'easeIn',
         type: type,
         delay: delay,
         duration: duration,

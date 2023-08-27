@@ -3,9 +3,8 @@ import profile from '@assets/profile.png'
 import book from '@assets/book.png'
 import poetry from '@assets/poetry.png'
 import debate from '@assets/debate.jpeg'
-import facebook from '@assets/facebook.png'
-import instagram from '@assets/instagram.png'
-import gmail from '@assets/gmail.png'
+import facebook from '@assets/facebook2.png'
+import instagram from '@assets/instagram2.png'
 
 export const navLinks = [
   {
@@ -357,10 +356,19 @@ export const contacts = [
     img: instagram,
     url: 'https://www.instagram.com/litcknit/',
   },
+]
+
+export const queries = [
   {
-    id: 'gmail',
-    title: 'Gmail',
-    img: gmail,
-    url: 'litcknit@gmail.com',
+    id: 'name3',
+    name: 'Name3 ',
+    contactNo: '+91 56 789 1234',
+    position: 'Co-oridinator',
+  },
+  {
+    id: 'name4',
+    name: 'Name4 ',
+    contactNo: '+91 56 789 1234',
+    position: 'Co-oridinator',
   },
 ]

@@ -2,11 +2,10 @@
 import Link from 'next/link'
 import React, { useState } from 'react'
 import Image from 'next/image'
-
 import { motion } from 'framer-motion'
 
 import { navLinks } from '@council/constants'
-import { navVarient } from '@council/utils/motion.js'
+import { navVarient, slideIn } from '@council/utils/motion.js'
 
 import logo from '@assets/logo.png'
 import lit from '@assets/lit2.png'
@@ -19,8 +18,11 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className=" md:px-32 px-5 py-3 w-full flex  justify-between top-0 fixed items-center z-30  text-white bg-bl-primary
+      className=" md:px-5 w-[80%] px-5 py-3 flex  justify-between top-5 rounded-[50px] fixed items-center z-30  drop-shadow-md bg-bl-primary text-white  backdrop-blur-md 
      transition-all duration-500 ease-in-out"
+      variants={slideIn('up', 'tween', 0.1, 0.3)}
+      initial="hidden"
+      whileInView="show"
     >
       <Link
         href="/"
@@ -38,7 +40,7 @@ const Navbar = () => {
             width={250}
             priority={true}
             height={270}
-            className="w-6  h-8 xs:flex hidden"
+            className="w-7  h-9 xs:flex hidden"
           />
         </motion.div>
         <Image

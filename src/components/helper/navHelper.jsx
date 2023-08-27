@@ -11,7 +11,7 @@ const NavHelper = ({ navLinks, sectionType }) => {
 
   useEffect(() => {
     const currentUrlLastPart = window.location.pathname.split('/').pop()
-    console.log(currentUrlLastPart)
+    // console.log(currentUrlLastPart)
     setActiveNav(currentUrlLastPart)
   }, [])
 

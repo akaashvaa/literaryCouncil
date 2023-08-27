@@ -8,7 +8,7 @@ const HeaderComponent = () => {
 
   useEffect(() => {
     function setNavbar() {
-      if (window.scrollY >= window.innerHeight - 110) setShowNavbar(true)
+      if (window.scrollY >= 600) setShowNavbar(true)
       else setShowNavbar(false)
     }
 
@@ -25,7 +25,11 @@ const HeaderComponent = () => {
   }, [])
 
   return (
-    <div className={showNavbar ? 'flex' : 'hidden'}>
+    <div
+      className={` ${
+        showNavbar ? 'flex' : 'hidden'
+      } flex justify-center items-center `}
+    >
       <Navbar />
     </div>
   )
