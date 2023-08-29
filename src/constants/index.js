@@ -57,6 +57,39 @@ export const branchRoute = {
   },
 }
 
+export const eventData = {
+  listFest: {
+    img: poetry,
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quam distinctio possimus excepturi molestiae reiciendis aperiam provident voluptatum. Deserunt dolorem voluptatibus est iure asperiores alias repudiandae deleniti magni doloribus in?',
+  },
+  debateSuperLeague: {
+    img: debate,
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quam distinctio possimus excepturi molestiae reiciendis aperiam provident voluptatum. Deserunt dolorem voluptatibus est iure asperiores alias repudiandae deleniti magni doloribus in?',
+  },
+  sahityotsav: {
+    img: debate,
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quam distinctio possimus excepturi molestiae reiciendis aperiam provident voluptatum. Deserunt dolorem voluptatibus est iure asperiores alias repudiandae deleniti magni doloribus in?',
+  },
+  kavySarita: {
+    img: book,
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quam distinctio possimus excepturi molestiae reiciendis aperiam provident voluptatum. Deserunt dolorem voluptatibus est iure asperiores alias repudiandae deleniti magni doloribus in?',
+  },
+  abhyuday: {
+    img: book,
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quam distinctio possimus excepturi molestiae reiciendis aperiam provident voluptatum. Deserunt dolorem voluptatibus est iure asperiores alias repudiandae deleniti magni doloribus in?',
+  },
+  aarambh: {
+    img: book,
+    content:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga quam distinctio possimus excepturi molestiae reiciendis aperiam provident voluptatum. Deserunt dolorem voluptatibus est iure asperiores alias repudiandae deleniti magni doloribus in?',
+  },
+}
+
 export const events = [
   {
     id: 'LitFest',
@@ -77,8 +110,8 @@ export const events = [
   },
 
   {
-    id: 'Abhyudav',
-    title: 'Abhyudav',
+    id: 'Abhyuday',
+    title: 'Abhyuday',
   },
   {
     id: 'Aarambh',

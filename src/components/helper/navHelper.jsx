@@ -23,9 +23,14 @@ const NavHelper = ({ navLinks, sectionType }) => {
 
   return (
     <section className="flex  flex-col gap-5 justify-evenly items-center my-5  mx-3 mb-24">
-      <Link href={`/#${sectionType}`}>
-        <Image src={logo} alt="logo" width={40} />
-      </Link>
+      <Image
+        onClick={() => router.push(`/#${sectionType}`)}
+        src={logo}
+        alt="logo"
+        width={40}
+        className=" cursor-pointer"
+      />
+
       <ul className="list-none  flex-row gap-9 flex justify-center px-5">
         {navLinks.map((nav) => (
           <span

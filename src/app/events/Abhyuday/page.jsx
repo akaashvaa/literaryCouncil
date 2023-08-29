@@ -1,8 +1,8 @@
-import { branchRoute } from '@council/constants'
+import { eventData } from '@council/constants'
 import SecBranchHome from '@council/components/helper/SecHomePage'
 
 const Abhyuday = () => {
-  const { img, content } = branchRoute.debateClub
+  const { img, content } = eventData.abhyuday
   return <SecBranchHome content={content} img={img} />
 }
 
