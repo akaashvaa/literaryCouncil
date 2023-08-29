@@ -1,5 +1,5 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useRouter } from 'next/navigation'
@@ -15,19 +15,34 @@ const Navbar = () => {
   const router = useRouter()
   const [active, setActive] = useState('')
   const [toggle, setToggle] = useState(false)
+  const [rotate, setRotate] = useState(false)
+
+  const handleRotate = async () => {
+    await new Promise(() => {
+      setRotate(!rotate)
+    })
+  }
 
   return (
     <motion.nav
-      className=" md:px-5 w-[80%] px-5 py-3 flex  justify-between top-5 rounded-[50px] fixed items-center z-30  drop-shadow-md bg-bl-secondary text-white  backdrop-blur-md 
+      className=" md:px-5 w-[80%] px-5 py-3 flex  justify-between top-5 rounded-[50px] fixed items-center z-30  drop-shadow-md bg-bl-primary text-white  backdrop-blur-md 
      transition-all duration-500 ease-in-out"
       variants={slideIn('up', 'tween', 0.1, 0.3)}
       initial="hidden"
       whileInView="show"
-      whileTap={{ rotate: 360 }}
+      whileTap={{ rotate: rotate ? 360 : 0 }}
     >
+      {/* overlay for tap */}
+      <div
+        className="absolute  w-full h-full  z-40 -translate-x-5"
+        onClick={(e) => {
+          e.stopPropagation() // Prevent the event from propagating to the parent elements
+          handleRotate()
+        }}
+      />
       <div
         className="
-     flex xs:flex-row justify-center flex-col gap-1  items-center md:justify-start  "
+     flex xs:flex-row justify-center flex-col gap-1  items-center md:justify-start z-50  "
       >
         <motion.div
           variants={navVarient()}
@@ -52,7 +67,7 @@ const Navbar = () => {
           className=" px-4  cursor-pointer"
         />
       </div>
-      <ul className="list-none  flex-row gap-9 hidden md:flex justify-center px-5">
+      <ul className="list-none  flex-row gap-9 hidden md:flex justify-center px-5 z-50">
         {navLinks.map((nav) => (
           <li
             key={nav.id}
@@ -69,9 +84,6 @@ const Navbar = () => {
           alt="menu"
           width={25}
           className=" cursor-pointer"
-          onClick={() => {
-            setToggle(!toggle)
-          }}
         />
         <div
           className={`${

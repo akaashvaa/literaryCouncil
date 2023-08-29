@@ -31,7 +31,7 @@ export function AchievementCard({ achievement, index }) {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="flex flex-col  p-7 bg-bl-secondary   drop-shadow-xl gap-3 rounded-lg"
+      className="flex flex-col  p-7  bg-bl-secondary drop-shadow-xl gap-3 rounded-lg"
     >
       <motion.div
         variants={zoomIn(0.5, 1, 1)}

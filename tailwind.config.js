@@ -12,8 +12,6 @@ module.exports = {
         'wh-f3': '#F3F3F3',
         'wh-fb': '#FBFBFB',
         'wh-c9': '#C9C9C9',
-        'wh-93': '#939393',
-        'wh-59': '#595959',
         'bl-primary': '#131313 ',
         'bl-secondary': '#20232A',
         footer: '#cfcece',
