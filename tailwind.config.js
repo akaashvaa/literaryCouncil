@@ -16,6 +16,7 @@ module.exports = {
         'wh-59': '#595959',
         'bl-primary': '#131313 ',
         'bl-secondary': '#20232A',
+        footer: '#cfcece',
       },
     },
     screens: {

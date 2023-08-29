@@ -23,7 +23,9 @@ export default function LiveUpdates() {
         <div className="flex w-1/2 flex-col bg-wh-primary  drop-shadow-md rounded-lg gap-2 font-extralight ">
           <div className="flex  justify-between items-center p-2">
             <p>Winner is announced for the event</p>
-            <Image src={openLink} alt="openLink" width={15} />
+            <a href="" className=" cursor-pointer">
+              <Image src={openLink} alt="openLink" width={15} />
+            </a>
           </div>
           <hr />
         </div>

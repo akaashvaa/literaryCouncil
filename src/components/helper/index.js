@@ -14,7 +14,7 @@ const monthNames = [
 ]
 const images = {
   winter: 'snowflake.png',
-  summer: 'sun.png',
+  summer: 'none',
   monsoon: 'water-drop.png',
   autumn: ' maple-leaf.png',
 }

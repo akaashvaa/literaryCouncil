@@ -1,9 +1,8 @@
 'use client'
-import Link from 'next/link'
 import React, { useState } from 'react'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-
+import { useRouter } from 'next/navigation'
 import { navLinks } from '@council/constants'
 import { navVarient, slideIn } from '@council/utils/motion.js'
 
@@ -13,26 +12,28 @@ import close from '@assets/close2.png'
 import menu from '@assets/menu2.png'
 
 const Navbar = () => {
+  const router = useRouter()
   const [active, setActive] = useState('')
   const [toggle, setToggle] = useState(false)
 
   return (
     <motion.nav
-      className=" md:px-5 w-[80%] px-5 py-3 flex  justify-between top-5 rounded-[50px] fixed items-center z-30  drop-shadow-md bg-bl-primary text-white  backdrop-blur-md 
+      className=" md:px-5 w-[80%] px-5 py-3 flex  justify-between top-5 rounded-[50px] fixed items-center z-30  drop-shadow-md bg-bl-secondary text-white  backdrop-blur-md 
      transition-all duration-500 ease-in-out"
       variants={slideIn('up', 'tween', 0.1, 0.3)}
       initial="hidden"
       whileInView="show"
+      whileTap={{ rotate: 360 }}
     >
-      <Link
-        href="/"
-        className="flex xs:flex-row justify-center flex-col gap-1  items-center md:justify-start  "
+      <div
+        className="
+     flex xs:flex-row justify-center flex-col gap-1  items-center md:justify-start  "
       >
         <motion.div
           variants={navVarient()}
           initial="hidden"
           whileInView="show"
-          whileTap="show"
+          whileTap={{ rotate: 45 }}
         >
           <Image
             src={logo}
@@ -47,10 +48,10 @@ const Navbar = () => {
           src={lit}
           alt="literaryFontLogo"
           width={230}
-          className=" px-4 "
+          onClick={() => router.push('/')}
+          className=" px-4  cursor-pointer"
         />
-      </Link>
-
+      </div>
       <ul className="list-none  flex-row gap-9 hidden md:flex justify-center px-5">
         {navLinks.map((nav) => (
           <li

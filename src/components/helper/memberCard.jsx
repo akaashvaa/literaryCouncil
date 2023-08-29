@@ -10,16 +10,16 @@ const MemberCard = ({ member, i }) => {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className=" shadow-md  bg-wh-primary  flex flex-col rounded-xl gap-3 items-center"
+      className=" shadow-md  bg-wh-primary  flex flex-col rounded-lg gap-3 items-center  overflow-hidden"
     >
-      <Image
-        src={member.img}
-        width={200}
-        alt={member.name}
-        className=" object-cover"
-      />
-      <div className="flex flex-col gap-1 text-center py-2">
-        <h1 className="">{member.name}</h1>
+      <div className="relative overflow-hidden ">
+        <motion.div whileHover={{ scale: 1.1 }}>
+          <Image src={member.img} width={200} alt={member.name} />
+        </motion.div>
+      </div>
+
+      <div className=" basis-1/2 flex flex-col gap-1 text-center py-2 ">
+        <h1 className=" font-semibold">{member.name}</h1>
         <span>{member.Position}</span>
       </div>
     </motion.div>

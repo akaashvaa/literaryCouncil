@@ -3,9 +3,12 @@ import { useRef, useEffect, useState } from 'react'
 import { useFrame } from '@react-three/fiber'
 import { Points, PointMaterial } from '@react-three/drei'
 import * as THREE from 'three'
-import getSeasonByMonth from './index'
 
-const StarsComp = (props) => {
+/**@returns
+ *  image name */
+import getSeasonByMonth from '../index'
+
+const SeasonCanvas = (props) => {
   const ref = useRef()
   const [currentSeason, setCurrentSeason] = useState('')
   let sizeOfItem = 0.01
@@ -19,19 +22,20 @@ const StarsComp = (props) => {
   }, [currentSeason])
 
   if (currentSeason == 'maple-leaf.png') {
-    AmountOfItem = 100
+    AmountOfItem = 1000
     sizeOfItem = 0.01
   }
 
   const sphere = new Float32Array(AmountOfItem * 3)
   //   const snowflakeTexture = new THREE.TextureLoader().load(snowflake)
-  const snowflakeTexture = new THREE.TextureLoader().load(
-    `http://localhost:3000/${currentSeason}`
-  )
+  if (currentSeason != 'nothing') {
+    var snowflakeTexture = new THREE.TextureLoader().load(
+      `http://localhost:3000/${currentSeason}`
+    )
 
-  snowflakeTexture.wrapS = THREE.RepeatWrapping
-  snowflakeTexture.wrapT = THREE.RepeatWrapping
-
+    snowflakeTexture.wrapS = THREE.RepeatWrapping
+    snowflakeTexture.wrapT = THREE.RepeatWrapping
+  }
   for (let i = 0; i < sphere.length; i += 3) {
     // Randomize snowflake positions
     sphere[i] = Math.random() * 2 - 1
@@ -64,9 +68,10 @@ const StarsComp = (props) => {
           size={sizeOfItem} // Adjust the size of the snowflakes
           sizeAttenuation={true}
           depthWrite={false}
+          className=" rounded-full"
         />
       </Points>
     </group>
   )
 }
-export default StarsComp
+export default SeasonCanvas

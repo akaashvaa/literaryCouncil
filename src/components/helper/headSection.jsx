@@ -8,9 +8,10 @@ import { zoomIn } from '@council/utils/motion.js'
 const HeadSectionTag = () => {
   return (
     <motion.div
-      variants={zoomIn(0, 1)}
+      variants={zoomIn(0, 0, 1)}
       initial="hidden"
-      animate="show"
+      whileInView="show"
+      viewport={{ once: true }}
       className="flex flex-col  justify-center items-center self-center absolute right-0 left-0  top-0 bottom-0 "
     >
       <div className="flex gap-10">

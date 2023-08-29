@@ -1,10 +1,13 @@
 'use client'
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import StarsComp from './helper/StarsComp'
-import HeadSectionTag from './helper/headSection'
+import SeasonCanvas from '@council/components/helper/canvas/seasonCanvas'
+import HeadSectionTag from '@council/components/helper/headSection'
+import SandCanvas from '@council/components/helper/canvas/sandCanvas'
+import getSeasonByMonth from './helper'
 
 const FirstImpression = () => {
+  const check = getSeasonByMonth() === 'none'
   return (
     <div
       className="w-full h-screen top-0  
@@ -12,7 +15,7 @@ const FirstImpression = () => {
     >
       <Canvas camera={{ position: [0, 0, Math.PI / 4] }}>
         <Suspense fallback={null}>
-          <StarsComp className="w-full " />
+          {check ? <SandCanvas /> : <SeasonCanvas />}
         </Suspense>
         <ambientLight intensity={0.4} />
       </Canvas>

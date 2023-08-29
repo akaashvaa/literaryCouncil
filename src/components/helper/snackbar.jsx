@@ -1,21 +1,13 @@
 'use client'
 import React, { useState } from 'react'
 import { Snackbar, Button } from '@mui/material'
-import Image from 'next/image'
-import close from '@assets/close4.png'
-export default function SnackBar({ content }) {
-  const [open, setOpen] = useState(false)
 
-  const handleClose = (event, reason) => {
-    if (reason === 'clickaway') {
-      return
-    }
-    setOpen(false)
-  }
+export default function SnackBar({ querie }) {
+  const [open, setOpen] = useState(false)
 
   const handleClick = async () => {
     try {
-      await navigator.clipboard.writeText(content)
+      await navigator.clipboard.writeText(querie.contactNo)
       setOpen(true)
     } catch (error) {
       alert('Error while copying content')
@@ -23,21 +15,23 @@ export default function SnackBar({ content }) {
   }
 
   return (
-    <>
-      <p className="cursor-pointer" onClick={handleClick}>
-        {content}
-      </p>
-      <Snackbar
-        open={open}
-        autoHideDuration={5000}
-        onClose={handleClose}
-        message="Copied"
-        action={
-          <Button color="inherit" size="small" onClick={handleClose}>
-            <Image src={close} width={20} alt="close" />
-          </Button>
-        }
-      />
-    </>
+    <Button
+      key={querie.id}
+      onClick={handleClick}
+      className="flex gap-2 justify-center items-center bg-bl-secondary  text-footer p-3 rounded-md cursor-copy"
+    >
+      <p>{querie.position}</p>
+      <span>:</span>
+      <div>
+        <p>{querie.contactNo}</p>
+        <Snackbar
+          open={open}
+          autoHideDuration={800}
+          onClose={() => setOpen(false)}
+          message="Copied"
+          className=" bg-bl-secondary"
+        />
+      </div>
+    </Button>
   )
 }

@@ -74,10 +74,10 @@ export const fadeIn = (direction, type, delay, duration) => {
   }
 }
 
-export const zoomIn = (delay, duration) => {
+export const zoomIn = (scale, delay, duration) => {
   return {
     hidden: {
-      scale: 0,
+      scale: scale,
       opacity: 0,
     },
     show: {

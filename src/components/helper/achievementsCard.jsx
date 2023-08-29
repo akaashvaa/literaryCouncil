@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { slideIn } from '@council/utils/motion'
+import { slideIn, zoomIn } from '@council/utils/motion'
 
 function CardHelper({ point }) {
   return (
@@ -31,23 +31,29 @@ export function AchievementCard({ achievement, index }) {
       initial="hidden"
       whileInView="show"
       viewport={{ once: true }}
-      className="flex flex-col  p-7  shadow-xl gap-10"
+      className="flex flex-col  p-7 bg-bl-secondary   drop-shadow-xl gap-3 rounded-lg"
     >
-      <div className="flex flex-col  bg-bl-secondary px-5 py-3 rounded-lg">
-        <div className=" flex justify-between items-center">
+      <motion.div
+        variants={zoomIn(0.5, 1, 1)}
+        initial="hidden"
+        animate="show"
+        className="flex  justify-between items-center bg-bl-primary  px-5 py-3 rounded-lg drop-shadow-lg"
+      >
+        <div className=" flex flex-col  justify-between items-center">
           <h1 className=" font-medium text-3xl ">{achievement.title}</h1>
-          <Image
-            src={achievement.collegeIcon}
-            alt={achievement.title}
-            width={50}
-            height={50}
-            className=" object-contain rounded-full "
-          />
+
+          <h3 className="flex m-3 text-lg  ">
+            {achievement.eventName} {achievement.year}
+          </h3>
         </div>
-        <h3 className="flex m-3 text-lg  ">
-          {achievement.eventName} {achievement.year}
-        </h3>
-      </div>
+        <Image
+          src={achievement.collegeIcon}
+          alt={achievement.title}
+          width={50}
+          height={50}
+          className=" object-contain rounded-full "
+        />
+      </motion.div>
       <div className="flex flex-col  bg-bl-secondary p-5 rounded-lg">
         {achievement.points.map((point, index) => (
           <CardHelper point={point} key={`experience-point-${index}`} />
