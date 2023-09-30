@@ -78,12 +78,15 @@ const Navbar = () => {
           </li>
         ))}
       </ul>
-      <div className="md:hidden flex justify-end items-center">
+      <div className="md:hidden flex justify-end items-center z-40">
         <Image
           src={toggle ? close : menu}
           alt="menu"
           width={25}
           className=" cursor-pointer"
+          onClick={() => {
+            setToggle(!toggle)
+          }}
         />
         <div
           className={`${

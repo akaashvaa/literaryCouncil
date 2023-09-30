@@ -11,7 +11,10 @@ import { AchievementCard } from '@council/components/helper/achievementsCard'
 
 export default function Achievements() {
   return (
-    <section className="py-24 md:px-32 px-8 bg-bl-primary text-white">
+    <section
+      id="achievements"
+      className="py-24 md:px-32 px-8 bg-bl-primary text-white"
+    >
       <motion.div
         variants={textVariant(0.25)}
         initial="hidden"
