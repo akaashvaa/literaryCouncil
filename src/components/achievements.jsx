@@ -25,7 +25,7 @@ export default function Achievements() {
         <h2 className={styles.sectionHeadText}>Our Achievements</h2>
       </motion.div>
 
-      <div className=" flex flex-wrap justify-evenly md:mx-16 mx-5 my-10">
+      <div className=" flex flex-wrap justify-evenly md:mx-16 gap-5 mx-5 my-10">
         {achievementData.map((achievement, index) => (
           <AchievementCard
             key={index}
