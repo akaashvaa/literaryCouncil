@@ -1,2 +1,3 @@
 This is a Website for Literary council from Kamla Nehru Istitute of Technology Sultanpur .
-still work in progress...
+
+https://literary-council.vercel.app
